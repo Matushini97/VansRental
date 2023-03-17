@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+}
+
+footer {
+    height: 75px;
+    background: #252525;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > p {
+    color: #AAAAAA;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
