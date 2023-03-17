@@ -11,7 +11,7 @@ const Navbar = () => {
                 <Link to='/about'>About</Link>
                 <Link to='/vans'>Vans</Link>
             </div>
-            <div>Change check</div>
+
         </nav>
     )
 
