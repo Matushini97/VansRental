@@ -1,0 +1,70 @@
+.vanTile {
+
+}
+
+.vanTile > img {
+    max-width: 50%;
+    border-radius: 5px;
+}
+
+.vanTile a {
+    color: #161616;
+    text-decoration: none;
+}
+
+.vanType {
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vanType:hover {
+    color: #FFEAD0;
+}
+
+.vanType:focus {
+    outline: none;
+}
+
+.vanType.selected {
+    color: #FFEAD0;
+}
+
+.vanType.simple:hover, .vanType.simple.selected {
+    background-color: #E17654;
+}
+
+.vanType.rugged:hover, .vanType.rugged.selected {
+    background-color: #115E59;
+}
+
+.vanType.luxury:hover, .vanType.luxury.selected {
+    background-color: #161616;
+}
+
+.vanType.clear-filters {
+    margin-left: -20px;
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    text-decoration: underline;
+    background-color: transparent;
+    color: #4D4D4D;
+}
+
+i[class*='van-type-'] {
+    padding: 7px 14px;
+}
+
+.vanInfo > p {
+    margin-bottom: 10px;
+}

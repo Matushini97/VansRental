@@ -1,0 +1,74 @@
+.vansWrapper {
+    background: #FFF7ED;
+    padding: 54px 27px 0 27px;
+}
+
+.vansWrapper > h2 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.filterBtn {
+    width: 104px;
+    height: 37px;
+    border-radius: 5px;
+    border: none;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #4D4D4D;
+    background: #FFEAD0;
+}
+
+.clearFilterBtn {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid grey;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#4D4D4D;
+}
+
+.filters {
+    margin-bottom: 55px;
+}
+
+.filters > button {
+    cursor: pointer;
+}
+.filters > button:nth-child(-n + 2) {
+    margin-right: 20px;
+}
+
+.filters > button:nth-child(3) {
+    margin-right: 40px;
+}
+
+.vanList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 34px;
+    margin-top: 57px;
+}
+
+.vansWrapper {
+    padding-inline: 23px;
+}
+
+.vansWrapper button {
+    margin-right: 20px;
+    cursor: pointer;
+}
