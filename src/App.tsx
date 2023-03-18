@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Vans from "./Pages/Vans";
+import VanDetail from './Pages/VanDetail'
 import './../server'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path='/' element={<Home />}/>
                 <Route  path='/about' element={<About />}/>
                 <Route path='/vans' element={<Vans />}/>
+                <Route path='/vans/:id' element={<VanDetail />}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

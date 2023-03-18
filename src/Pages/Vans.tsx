@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import s from './Vans.module.css'
 import {VansType} from "../Types";
 import VanCard from "../Components/VanCard";
+import {Link} from "react-router-dom";
 
 
 
@@ -24,6 +25,7 @@ const Vans = () => {
                      price={van.price}
                      type={van.type}
             />
+
         )
     })
 

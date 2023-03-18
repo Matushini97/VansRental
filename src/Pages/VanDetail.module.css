@@ -1,0 +1,124 @@
+.vanDetailContainer {
+    padding: 27px;
+    background: #FFF7ED;
+}
+
+.vanDetailContainer .backBtn {
+    color: black;
+    text-decoration: none;
+}
+
+.vanDetailContainer .backBtn:visited {
+
+}
+
+.vanDetailContainer .backBtn span {
+    text-decoration: underline;
+}
+
+.vanDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #161616;
+}
+
+.vanDetail img {
+    border-radius: 5px;
+    margin-block: 47px;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.vanDetail h2 {
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+
+}
+
+.vanDetail > i {
+    align-self: flex-start;
+}
+
+.vanDetail .vanPrice {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: left;
+}
+
+.vanDetail .vanPrice span {
+    font-weight: bold;
+}
+
+.vanDescription {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    display: inline-block;
+    width: 700px;
+    margin-bottom: 15px;
+}
+
+.vanDetail .linkBtn {
+    background-color: #FF8C38;
+    color: white;
+    width: 500px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+}
+
+.vanDetail .linkBtn:hover {
+    transform: translate(1px, 1px);
+}
+
+.vanType {
+    padding: 6px 26px;
+    font-style: normal;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.vanType.simple:hover, .vanType.simple.selected {
+    background-color: #E17654;
+}
+
+.vanType.rugged:hover, .vanType.rugged.selected {
+    background-color: #115E59;
+}
+
+.vanType.luxury:hover, .vanType.luxury.selected {
+    background-color: #161616;
+}
+
+.vanType.selected {
+    color: #FFEAD0;
+}
