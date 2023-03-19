@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 import s from './VanDetail.module.css'
-import {VansType} from "../Types";
-import Loader from "../Components/Loader";
+import {VansType} from "../../Types";
+import Loader from "../../Components/Loader";
 
 const VanDetail = () => {
 

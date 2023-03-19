@@ -8,6 +8,7 @@ const Navbar = () => {
         <nav>
             <Link to='/' className={s.title}>#VANLIFE</Link>
             <div className={s.navLinks}>
+                <Link to='/host'>Host</Link>
                 <Link to='/about'>About</Link>
                 <Link to='/vans'>Vans</Link>
             </div>
