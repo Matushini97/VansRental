@@ -4,7 +4,7 @@ import s from './Dashboard.module.css'
 const Dashboard = () => {
     return (
         <div>
-            Host Dashboard here
+            Слава украине!
         </div>
     );
 };
