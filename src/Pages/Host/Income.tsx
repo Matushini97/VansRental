@@ -4,7 +4,7 @@ import s from './Income.module.css'
 const Income = () => {
     return (
         <div>
-            Слава украине!
+            Income
         </div>
     );
 };

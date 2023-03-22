@@ -1,4 +1,4 @@
-nav {
+.navbarMain {
     background: #FFF7ED;
     height: 111px;
     width: 1440px;
@@ -21,7 +21,7 @@ nav {
 
 .navLinks > a:hover {
     color: #161616;
-    text-decoration: underline;
+    text-decoration: underline 3px;
 }
 
 .navLinks > a:last-child {

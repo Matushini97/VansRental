@@ -5,6 +5,7 @@ export type VansType = {
     description: string
     imageUrl: string
     type: string
+    hostId?: string
 }
 
 export type VanCardPropsType = {

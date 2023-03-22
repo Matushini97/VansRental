@@ -1,0 +1,19 @@
+.infoWrapper {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+}
+
+.infoWrapper p {
+    margin-bottom: 10px;
+}
+
+.infoWrapper p:last-child {
+    margin-bottom: 0;
+}
+
+.infoWrapper p span {
+    font-weight: bold;
+}

@@ -1,16 +1,19 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import s from './Navbar.module.css'
 
 const Navbar = () => {
-
+    const ActiveStyle = {
+        color: "#161616",
+        textDecoration: "underline 3px"
+    }
     return (
-        <nav>
-            <Link to='/' className={s.title}>#VANLIFE</Link>
+        <nav className={s.navbarMain}>
+            <NavLink to='/' className={s.title}>#VANLIFE</NavLink>
             <div className={s.navLinks}>
-                <Link to='/host'>Host</Link>
-                <Link to='/about'>About</Link>
-                <Link to='/vans'>Vans</Link>
+                <NavLink style={ ({isActive}) => isActive ? ActiveStyle : undefined} to='/host'>Host</NavLink>
+                <NavLink style={ ({isActive}) => isActive ? ActiveStyle : undefined} to='/about'>About</NavLink>
+                <NavLink style={ ({isActive}) => isActive ? ActiveStyle : undefined} to='/vans'>Vans</NavLink>
             </div>
 
         </nav>

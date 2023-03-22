@@ -1,0 +1,68 @@
+.mainHostVansWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+}
+
+
+
+
+
+.hostVansWrapper {
+    background: #FFF7ED;
+    padding: 26px;
+}
+
+.hostVansWrapper h2 {
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.hostVanTile {
+    border-radius: 10px;
+    background: #FFFFFF;
+    width: 400px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hostVanTile img {
+    width: 30%;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.vanInfo {
+    color: #161616;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vanInfo h3 {
+    font-family: Inter,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+}
+
+.vanInfo p {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+}
+
+

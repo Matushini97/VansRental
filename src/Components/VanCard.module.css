@@ -36,7 +36,7 @@
     border-radius: 5px;
     background-color: #FFEAD0;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: Inter;
+    font-family: Inter,sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 32px;

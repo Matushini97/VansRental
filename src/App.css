@@ -3,19 +3,18 @@
 
 * {
   box-sizing: border-box;
-}
-
-html, body {
   margin: 0;
   padding: 0;
 }
 
 html {
   position: relative;
+  height: 100%;
 
 }
 
 body {
+  height: 100%;
   width: 1440px;
   margin: 0 auto;
 }
@@ -23,12 +22,14 @@ body {
 .button {
   border-radius: 5px;
   border: none;
-  font-family: Inter;
+  font-family: Inter,sans-serif;
   font-weight: 700;
   line-height: 32px;
-  letter-spacing: 0em;
   text-align: center;
   color: #FFFFFF;
   padding: 0;
   cursor: pointer;
 }
+
+
+

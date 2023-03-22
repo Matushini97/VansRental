@@ -1,0 +1,122 @@
+.currentVanWrapper {
+    /*background: #FFF7ED;*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background: #FFF;
+
+}
+.currentVan {
+    width: 100%;
+    background: #FFF;
+    border-radius: 6px;
+    display: flex;
+    padding: 20px;
+}
+
+.currentVan img {
+    border-radius: 6px;
+    width: 150px;
+    margin-right: 15px;
+}
+
+.infoWrapper h2 {
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+
+}
+
+.infoWrapper > p {
+    margin-bottom: 10px;
+    font-family: Inter,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    /*line-height: 32px;*/
+
+}
+
+.infoWrapper > p > span {
+    font-family: Prompt, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    /*line-height: 32px;*/
+
+
+}
+
+.vanType {
+    display: inline-block;
+    background-color: #FFEAD0;
+    height: 34px;
+    padding: 6px 26px;
+    border-radius: 5px;
+    color: #FFEAD0;
+}
+
+.simple {
+    background-color: #E17654;
+}
+
+.luxury {
+    background-color: #161616;
+}
+
+.rugged {
+    background-color: #115E59;
+}
+
+.section {
+    background: #FFF7ED;
+    padding: 0 80px 20px 80px;
+}
+
+.backBtn {
+    display: inline-block;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+    color: #201F1D;
+    /*margin-left: 20px;*/
+    margin-bottom: 20px;
+}
+
+.backBtn span {
+    text-decoration: underline 2px #201F1D;
+}
+
+.backBtn:hover {
+    color: black;
+}
+
+.hostVanDetailNav {
+    margin-bottom: 20px;
+}
+
+.hostVanDetailNav > a {
+
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    text-decoration: none;
+    color: #4D4D4D;
+    margin-right: 30px;
+
+}
+
+.hostVanDetailNav > a:hover {
+    color: #161616;
+    text-decoration: underline 3px;
+}
+
+.hostVanDetailNav > a:last-child {
+    margin-right: 0;
+}
+

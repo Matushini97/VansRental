@@ -1,0 +1,26 @@
+.hostNav {
+    background: #FFF7ED;
+    padding: 32px 26px;
+    display: flex;
+}
+
+.hostNav a {
+    text-decoration: none;
+    color:#4D4D4D;
+    padding-right: 29px;
+    font-family: Inter,sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+}
+
+.hostNav a:hover {
+    color: #161616;
+    font-family: Inter,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: left;
+    text-decoration: underline 3px;
+}

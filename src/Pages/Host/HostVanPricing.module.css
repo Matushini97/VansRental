@@ -1,0 +1,14 @@
+.priceWrapper {
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    /*font-weight: 500;*/
+    line-height: 21px;
+    text-align: left;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.priceWrapper p span {
+    font-weight: normal;
+    font-size: 20px;
+}

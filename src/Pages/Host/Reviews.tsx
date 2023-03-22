@@ -4,7 +4,7 @@ import s from './Reviews.module.css'
 const Reviews = () => {
     return (
         <div>
-            Слава украине!
+            Reviews
         </div>
     );
 };
