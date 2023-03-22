@@ -1,12 +1,12 @@
 import React from 'react';
 import {useCurrentVan} from "./HostVanDetail";
-
+import s from './HostVanPhotos.module.css'
 const HostVanPhotos = () => {
     const { currentVan } = useCurrentVan();
 
     return (
         <div>
-            <img src={currentVan?.imageUrl}/>
+            <img className={s.image} src={currentVan?.imageUrl}/>
         </div>
     );
 };

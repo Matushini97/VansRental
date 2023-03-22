@@ -2,14 +2,18 @@ import React, {useEffect, useState} from 'react';
 import s from './Vans.module.css'
 import {VansType} from "../../Types";
 import VanCard from "../../Components/VanCard";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import Loader from "../../Components/Loader";
 
 
 
 const Vans = () => {
 
+    const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = useState<VansType[] | null>(null)
+
+    const typeFilter = searchParams.get("type")
+
 
     React.useEffect(() => {
         fetch("/api/vans")
@@ -17,7 +21,9 @@ const Vans = () => {
             .then(data => setVans(data.vans))
     }, [])
 
-    const vanElement = vans?.map(van => {
+    const displayedVans = typeFilter ? vans?.filter(van => van.type === typeFilter) : vans
+
+    const vanElement = displayedVans?.map(van => {
         return (
             <VanCard key={van.id}
                      id={van.id}
@@ -36,10 +42,10 @@ const Vans = () => {
             {/*    <>*/}
                     <h2>Explore our van options</h2>
                     <div className={s.filters}>
-                        <button className={s.filterBtn}>Simple</button>
-                        <button className={s.filterBtn}>Luxury</button>
-                        <button className={s.filterBtn}>Rugged</button>
-                        <button className={s.clearFilterBtn}>Clear filters</button>
+                        <Link to='?type=simple' className={`${s.filterBtn} ${s.simple}`}>Simple</Link>
+                        <Link to='?type=luxury' className={`${s.filterBtn} ${s.luxury}`}>Luxury</Link>
+                        <Link to='?type=rugged' className={`${s.filterBtn} ${s.rugged}`}>Rugged</Link>
+                        <Link to='.' className={s.clearFilterBtn}>Clear filters</Link>
                     </div>
                     <div className={s.vanList}>
                         {vanElement}

@@ -4,41 +4,45 @@
 }
 
 .vansWrapper > h2 {
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 34px;
-    letter-spacing: 0em;
     text-align: left;
     margin-bottom: 22px;
 }
 
 .filterBtn {
+    display: inline-flex;
     width: 104px;
     height: 37px;
     border-radius: 5px;
     border: none;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    letter-spacing: 0em;
     text-align: center;
     color: #4D4D4D;
     background: #FFEAD0;
+    justify-content: center;
+    align-items: center;
 }
 
 .clearFilterBtn {
     border: none;
     background: transparent;
     border-bottom: 2px solid grey;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    letter-spacing: 0em;
     text-align: left;
     color:#4D4D4D;
+}
+
+.clearFilterBtn:hover {
+    color:black;
 }
 
 .filters {
@@ -48,11 +52,11 @@
 .filters > button {
     cursor: pointer;
 }
-.filters > button:nth-child(-n + 2) {
+.filters > a:nth-child(-n + 2) {
     margin-right: 20px;
 }
 
-.filters > button:nth-child(3) {
+.filters > a:nth-child(3) {
     margin-right: 40px;
 }
 
@@ -72,4 +76,20 @@
 .vansWrapper button {
     margin-right: 20px;
     cursor: pointer;
+}
+
+
+.filterBtn.simple:hover {
+    background-color: #E17654;
+    color: #FFF7ED;
+}
+
+.filterBtn.rugged:hover{
+    background-color: #115E59;
+    color: #FFF7ED;
+}
+
+.filterBtn.luxury:hover{
+    background-color: #161616;
+    color: #FFF7ED;
 }
