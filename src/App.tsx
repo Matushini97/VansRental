@@ -19,12 +19,14 @@ import HostVanDetail from "./Pages/Host/HostVanDetail";
 import HostVanInfo from "./Pages/Host/HostVanInfo";
 import HostVanPhotos from "./Pages/Host/HostVanPhotos";
 import HostVanPricing from "./Pages/Host/HostVanPricing";
+import Error from './Pages/Error/Error'
 
 const App = () => {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Layout/>}>
+                    <Route path='*' element={<Error />}/>
                     <Route index element={<Home/>}/>
                     <Route path='about' element={<About/>}/>
                     <Route path='vans' element={<Vans/>}/>

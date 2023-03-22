@@ -14,5 +14,7 @@ export type VanCardPropsType = {
     imageUrl: string
     price: number
     type: string
+    search: string
+    typeFilter: string | null
 }
 

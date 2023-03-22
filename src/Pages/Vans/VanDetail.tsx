@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import s from './VanDetail.module.css'
 import {VansType} from "../../Types";
 import Loader from "../../Components/Loader";
@@ -9,6 +9,8 @@ const VanDetail = () => {
     const params = useParams()
     // const btnColor = van?.type ==='simple' ? s.simple : van?.type === 'luxury'? s.luxury: s.rugged
     const [van, setVan] = useState<VansType | null>(null)
+    const location = useLocation()
+
 
     useEffect(() => {
         fetch(`/api/vans/${params.id}`)
@@ -16,8 +18,12 @@ const VanDetail = () => {
             .then(data => setVan(data.vans))
     }, [params.id])
 
+    const search = location.state?.search || ""
+    const back = location.state?.type || "all"
+
     return (
         <div className={s.vanDetailContainer}>
+            <Link to={`..${search}`} relative="path" className={s.backBtn}>&larr; <span>Back to {back} vans</span></Link>
             {van ? (
                 <div className={s.vanDetail}>
                     <img src={van.imageUrl}/>

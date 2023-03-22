@@ -103,7 +103,6 @@
     font-weight: 600;
     line-height: 32px;
     text-align: center;
-    cursor: pointer;
     margin-bottom: 15px;
 }
 
@@ -121,4 +120,24 @@
 
 .vanType.selected {
     color: #FFEAD0;
+}
+
+.backBtn {
+    display: inline-block;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: left;
+    color: #201F1D;
+    /*margin-left: 20px;*/
+    margin-bottom: 20px;
+}
+
+.backBtn span {
+    text-decoration: underline 2px #201F1D;
+}
+
+.backBtn:hover {
+    color: black;
 }

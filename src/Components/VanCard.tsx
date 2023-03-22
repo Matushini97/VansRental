@@ -11,7 +11,7 @@ const VanCard = (props: VanCardPropsType) => {
 
     return (
 
-            <Link to={`/vans/${props.id}`} className={s.vanList}>
+            <Link to={props.id} state={ { search: `${props.search}`, type : props.typeFilter} } className={s.vanList}>
                 <div className={s.vanTile}>
                     <img src={props.imageUrl}/>
                     <div className={s.vanInfo}>

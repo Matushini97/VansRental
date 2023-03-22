@@ -1,0 +1,35 @@
+.errorWrapper {
+    height: calc(100vh - 75px - 111px);
+    background: #FFF7ED;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorWrapper h2 {
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+
+.errorWrapper a {
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-flex;
+    width: 495px;
+    height: 55px;
+    background: #161616;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

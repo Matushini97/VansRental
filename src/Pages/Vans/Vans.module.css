@@ -93,3 +93,18 @@
     background-color: #161616;
     color: #FFF7ED;
 }
+
+.simple.selected {
+    background-color: #E17654;
+    color: #FFF7ED;
+}
+
+.luxury.selected {
+    background-color: #115E59;
+    color: #FFF7ED;
+}
+
+.rugged.selected {
+    background-color: #161616;
+    color: #FFF7ED;
+}
