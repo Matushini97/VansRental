@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import s from './HostVanDetail.module.css'
-import {Link, NavLink, Outlet, useOutletContext, useParams} from "react-router-dom";
+import {Link, NavLink, Outlet, useOutletContext, useParams, useLoaderData} from "react-router-dom";
 import type {VansType} from "../../Types";
 import Loader from "../../Components/Loader";
+import {getHostVans} from "../../api";
+
+export function loader({params}: any) {
+    return getHostVans(params.id)
+}
 
 
 // https://reactrouter.com/en/main/hooks/use-outlet-context how to send context with TS from parent to child
@@ -11,13 +16,8 @@ type ContextType = { currentVan: VansType | null }
 const HostVanDetail = () => {
 
     const {id} = useParams()
-    const [currentVan, setCurrentVan] = useState<VansType | null>(null)
+    const currentVan: any = useLoaderData()
 
-    React.useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-            .then(res => res.json())
-            .then(data => setCurrentVan(data.vans))
-    }, [])
 
     const btnColor = currentVan?.type === 'simple' ? s.simple : currentVan?.type === 'luxury' ? s.luxury : s.rugged
 

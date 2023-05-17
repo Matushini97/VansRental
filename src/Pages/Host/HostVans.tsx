@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import s from './HostVans.module.css'
 import {VansType} from "../../Types";
-import {Link, NavLink} from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
+import {getHostVans} from "../../api";
+
+export async function loader() {
+    return getHostVans()
+}
 
 const HostVans = () => {
 
-    const [vans, setVans] = useState<VansType[] | null>(null)
+    const vans = useLoaderData()
 
-    React.useEffect(() => {
-        fetch("/api/host/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
-    }, [])
+
 
     const mappedVans = vans?.map(van => {
         return (

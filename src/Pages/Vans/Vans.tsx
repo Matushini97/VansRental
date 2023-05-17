@@ -2,41 +2,48 @@ import React, {useEffect, useState} from 'react';
 import s from './Vans.module.css'
 import {VansType} from "../../Types";
 import VanCard from "../../Components/VanCard";
-import {Link, useLocation, useSearchParams} from "react-router-dom";
-import Loader from "../../Components/Loader";
+import {Link, useLoaderData, useLocation, useSearchParams} from "react-router-dom";
+// import Loader from "../../Components/Loader";
 import {getVans} from "../../api";
 
 
+export async function loader() {
+    return getVans()
+}
 
 const Vans = () => {
 
     const [searchParams, setSearchParams] = useSearchParams()
-    const [vans, setVans] = useState<VansType[] | null>(null)
+    // const [vans, setVans] = useState<VansType[] | null>(null)
     const typeFilter = searchParams.get("type")
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<any>(null)
+    // const [loading, setLoading] = useState<boolean>(false)
+    // const [error, setError] = useState<any>(null)
+    const vans = useLoaderData() as VansType[]
 
-    React.useEffect(() => {
-        async function loadVans() {
-            setLoading(true)
-            try {
-                const data = await getVans()
-                setVans(data)
 
-            } catch(err) {
-                console.log(err)
-                // @ts-ignore
-                setError(err)
-            }  finally {
-                setLoading(false)
-            }
-            setLoading(false)
-        }
 
-        loadVans()
-    }, [])
 
-    const displayedVans = typeFilter ? vans?.filter(van => van.type === typeFilter) : vans
+    // React.useEffect(() => {
+    //     async function loadVans() {
+    //         setLoading(true)
+    //         try {
+    //             const data = await getVans()
+    //             setVans(data)
+    //
+    //         } catch(err) {
+    //             console.log(err)
+    //             // @ts-ignore
+    //             setError(err)
+    //         }  finally {
+    //             setLoading(false)
+    //         }
+    //         setLoading(false)
+    //     }
+    //
+    //     loadVans()
+    // }, [])
+
+    const displayedVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans
 
     const vanElement = displayedVans?.map(van => {
         return (
@@ -53,13 +60,13 @@ const Vans = () => {
         )
     })
 
-    if (loading) {
-        return <Loader/>
-    }
+    // if (loading) {
+    //     return <Loader/>
+    // }
 
-    if (error) {
-        return <h1>There was an error: {error.message}</h1>
-    }
+    // if (error) {
+    //     return <h1>There was an error: {error.message}</h1>
+    // }
 
     return (
         <div className={s.vansWrapper}>

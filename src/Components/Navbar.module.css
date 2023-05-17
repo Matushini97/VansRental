@@ -8,6 +8,11 @@
     padding: 26px;
 }
 
+.navLinks {
+    display: flex;
+    align-items: center;
+}
+
 .navLinks > a {
     font-family: Inter, sans-serif;
     font-size: 16px;
@@ -44,3 +49,7 @@
     text-decoration: none;
 }
 
+.loginLink {
+    display: inline-flex;
+    align-items: center;
+}
