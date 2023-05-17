@@ -10,7 +10,7 @@ export async function loader() {
 
 const HostVans = () => {
 
-    const vans = useLoaderData()
+    const vans = useLoaderData() as VansType[]
 
 
 
@@ -18,7 +18,7 @@ const HostVans = () => {
         return (
             <Link to={van.id} className={s.hostVanList} key={van.id}>
                     <div className={s.hostVanTile}>
-                        <img src={van.imageUrl}/>
+                        <img src={van.imageUrl} alt={'van'}/>
                         <div className={s.vanInfo}>
                             <h3>{van.name}</h3>
                             <p>${van.price} / day</p>
