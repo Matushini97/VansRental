@@ -1,6 +1,7 @@
 import React, {ChangeEvent, FormEvent} from 'react';
 import s from './Login.module.css'
 import {useLoaderData} from "react-router-dom";
+import {loginUser} from "../../api";
 
 export function loader(params: any) {
     const req = params.request
@@ -14,7 +15,8 @@ const Login = () => {
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log(loginFormData)
+        loginUser(loginFormData)
+            .then(data => console.log(data))
     }
 
     function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -27,7 +29,7 @@ const Login = () => {
 
     return (
         <div className={s.loginContainer}>
-            <h1>Sign in to your account</h1>
+            <h2>Sign in to your account</h2>
             {message && <h2 className="red">{message}</h2>}
             <form onSubmit={handleSubmit} className={s.loginForm}>
                 <input
