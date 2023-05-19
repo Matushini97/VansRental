@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
 import s from './HostVanDetail.module.css'
 import {Link, NavLink, Outlet, useOutletContext, useParams, useLoaderData} from "react-router-dom";
 import type {VansType} from "../../Types";
-import Loader from "../../Components/Loader";
 import {getHostVans} from "../../api";
+import {requireAuth} from "../../../utils";
 
-export function loader({params}: any) {
+export async function loader({params}: any) {
+    await requireAuth()
     return getHostVans(params.id)
 }
-
 
 // https://reactrouter.com/en/main/hooks/use-outlet-context how to send context with TS from parent to child
 type ContextType = { currentVan: VansType | null }
@@ -16,19 +15,11 @@ type ContextType = { currentVan: VansType | null }
 const HostVanDetail = () => {
 
     const {id} = useParams()
-    const currentVan: any = useLoaderData()
-
+    const currentVan = useLoaderData() as VansType
 
     const btnColor = currentVan?.type === 'simple' ? s.simple : currentVan?.type === 'luxury' ? s.luxury : s.rugged
 
-    let vanType
-    if (currentVan) {
-        vanType = currentVan.type.charAt(0).toUpperCase() + currentVan.type.slice(1)
-    }
-
-    if (!currentVan) {
-        return <Loader/>
-    }
+    const vanType = currentVan.type.charAt(0).toUpperCase() + currentVan.type.slice(1)
 
     const ActiveStyle = {
         color: "#161616",
@@ -40,7 +31,7 @@ const HostVanDetail = () => {
             <Link to='..' relative="path" className={s.backBtn}>&larr; <span>Back to all vans</span></Link>
             <div className={s.currentVanWrapper}>
                 <div className={s.currentVan}>
-                    <img src={currentVan.imageUrl}/>
+                    <img src={currentVan.imageUrl} alt={'picture'}/>
                     <div className={s.infoWrapper}>
                         <p className={`${s.vanType} ${btnColor}`}>{vanType}</p>
                         <h2>{currentVan.name}</h2>

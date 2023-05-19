@@ -1,10 +1,16 @@
 import React, {ChangeEvent, FormEvent} from 'react';
-import { useNavigate } from "react-router-dom"
 import s from './Login.module.css'
+import {useLoaderData} from "react-router-dom";
+
+export function loader(params: any) {
+    const req = params.request
+    return new URL(req.url).searchParams.get("message")
+}
 
 const Login = () => {
 
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const message = useLoaderData() as string
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -22,6 +28,7 @@ const Login = () => {
     return (
         <div className={s.loginContainer}>
             <h1>Sign in to your account</h1>
+            {message && <h2 className="red">{message}</h2>}
             <form onSubmit={handleSubmit} className={s.loginForm}>
                 <input
                     name="email"

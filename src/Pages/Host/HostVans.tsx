@@ -1,18 +1,17 @@
-import React, {useState} from 'react';
 import s from './HostVans.module.css'
 import {VansType} from "../../Types";
 import {Link, useLoaderData} from "react-router-dom";
 import {getHostVans} from "../../api";
+import {requireAuth} from "../../../utils";
 
 export async function loader() {
+    await requireAuth()
     return getHostVans()
 }
 
 const HostVans = () => {
 
     const vans = useLoaderData() as VansType[]
-
-
 
     const mappedVans = vans?.map(van => {
         return (

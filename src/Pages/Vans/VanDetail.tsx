@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {Link, useLocation, useParams, useLoaderData} from "react-router-dom";
+import {Link, useLocation, useLoaderData} from "react-router-dom";
 import s from './VanDetail.module.css'
 import {VansType} from "../../Types";
-import Loader from "../../Components/Loader";
 import {getVans} from "../../api";
 
 export function loader({params}: any) {
