@@ -1,4 +1,4 @@
-export async function getVans(id) {
+export async function getVans(id: number) {
     const url = id ? `/api/vans/${id}` : "/api/vans"
     const res = await fetch(url)
     if (!res.ok) {
@@ -12,7 +12,7 @@ export async function getVans(id) {
     return data.vans
 }
 
-export async function getHostVans(id) {
+export async function getHostVans(id: number) {
     const url = id ? `/api/host/vans/${id}` : "/api/host/vans"
     const res = await fetch(url)
     if (!res.ok) {
@@ -26,7 +26,12 @@ export async function getHostVans(id) {
     return data.vans
 }
 
-export async function loginUser(creds) {
+export type CredsType = {
+    email: string
+    password: string
+}
+
+export async function loginUser(creds: CredsType) {
     const res = await fetch("/api/login",
         { method: "post", body: JSON.stringify(creds) }
     )
@@ -42,3 +47,4 @@ export async function loginUser(creds) {
 
     return data
 }
+
