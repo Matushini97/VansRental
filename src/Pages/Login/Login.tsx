@@ -1,6 +1,6 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react';
 import s from './Login.module.css'
-import {Form, redirect, useLoaderData} from "react-router-dom";
+import {Form, redirect, useActionData, useLoaderData, useNavigation} from "react-router-dom";
 import {loginUser} from "../../api";
 
 export function loader(params: any) {
@@ -13,32 +13,25 @@ export async function action(obj: any) {
     const formData = await request.formData()
     const email = formData.get("email")
     const password = formData.get("password")
-    const data = await loginUser({ email, password })
-    localStorage.setItem("loggedin", JSON.stringify(true))
-    return redirect("/host")
-}
-
-const Login = () => {
-    const [status, setStatus] = useState("idle")
-    const [error, setError] = useState<null | {code: number, headers: any, message: string}>(null)
-    const message = useLoaderData() as string
-
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-        setStatus("submitting")
-        setError(null)
-        loginUser(loginFormData)
-            .then(data => console.log(data))
-            .catch(err => setError(err))
-            .finally(() => setStatus("idle"))
+    try {
+        const data = await loginUser({ email, password })
+        localStorage.setItem("loggedin", JSON.stringify(true))
+        return redirect("/host")
+    } catch(err: any) {
+        return err.message
     }
+}
+const Login = () => {
+    const errorMessage = useActionData() as string
+    const message = useLoaderData() as string
+    const navigation = useNavigation()
 
 
     return (
         <div className={s.loginContainer}>
             <h2>Sign in to your account</h2>
             {message && <h2 className="red">{message}</h2>}
-            {error && <h3 className="red">{error.message}</h3>}
+            {errorMessage && <h3 className="red">{errorMessage}</h3>}
             <Form method="post" replace className={s.loginForm}>
                 <input
                     name="email"
@@ -50,7 +43,7 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={status === "submitting"}>{status === "submitting"
+                <button disabled={navigation.state === "submitting"}>{navigation.state === "submitting"
                     ? "Logging in..." : "Log in"}</button>
             </Form>
         </div>
