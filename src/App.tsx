@@ -25,6 +25,7 @@ import Error from './Pages/Error/Error'
 import Login, {loader as LoginLoader, action as loginAction} from "./Pages/Login/Login";
 import {requireAuth} from "../utils";
 
+
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
         <Route path='*' element={<Error />}/>
