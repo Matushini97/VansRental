@@ -1,4 +1,4 @@
-export async function getVans(id: number) {
+export async function getVans(id?: number) {
     const url = id ? `/api/vans/${id}` : "/api/vans"
     const res = await fetch(url)
     if (!res.ok) {
@@ -12,7 +12,7 @@ export async function getVans(id: number) {
     return data.vans
 }
 
-export async function getHostVans(id: number) {
+export async function getHostVans(id?: number) {
     const url = id ? `/api/host/vans/${id}` : "/api/host/vans"
     const res = await fetch(url)
     if (!res.ok) {
