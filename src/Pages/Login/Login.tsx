@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useState} from 'react';
+import React from 'react';
 import s from './Login.module.css'
 import {Form, redirect, useActionData, useLoaderData, useNavigation} from "react-router-dom";
 import {loginUser} from "../../api";
@@ -13,10 +13,12 @@ export async function action(obj: any) {
     const formData = await request.formData()
     const email = formData.get("email")
     const password = formData.get("password")
+    const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host"
+
     try {
         const data = await loginUser({ email, password })
         localStorage.setItem("loggedin", JSON.stringify(true))
-        return redirect("/host")
+        return redirect(pathname)
     } catch(err: any) {
         return err.message
     }

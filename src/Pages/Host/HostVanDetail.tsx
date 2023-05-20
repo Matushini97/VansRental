@@ -4,9 +4,9 @@ import type {VansType} from "../../Types";
 import {getHostVans} from "../../api";
 import {requireAuth} from "../../../utils";
 
-export async function loader({params}: any) {
-    await requireAuth()
-    return getHostVans(params.id)
+export async function loader(obj: any) {
+    await requireAuth(obj.request)
+    return getHostVans(obj.params.id)
 }
 
 // https://reactrouter.com/en/main/hooks/use-outlet-context how to send context with TS from parent to child
