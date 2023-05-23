@@ -1,4 +1,6 @@
-export async function getVans(id?: number) {
+import {VansType} from "./Types";
+
+export async function getVans(id?: number): Promise<VansType[]> {
     const url = id ? `/api/vans/${id}` : "/api/vans"
     const res = await fetch(url)
     if (!res.ok) {
@@ -12,7 +14,7 @@ export async function getVans(id?: number) {
     return data.vans
 }
 
-export async function getHostVans(id?: number) {
+export async function getHostVans(id?: number): Promise<VansType[]> {
     const url = id ? `/api/host/vans/${id}` : "/api/host/vans"
     const res = await fetch(url)
     if (!res.ok) {

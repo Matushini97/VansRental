@@ -17,4 +17,8 @@ export type VanCardPropsType = {
     search: string
     typeFilter: string | null
 }
+export type LoaderDataType = {
+    vans: Promise<VansType[]>
+}
+
 
