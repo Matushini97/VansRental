@@ -11,7 +11,7 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Vans, {loader as vansLoader} from "./Pages/Vans/Vans";
 import VanDetail, {loader as vanDetailLoader} from './Pages/Vans/VanDetail'
-import '../server.js'
+
 import Dashboard from "./Pages/Host/Dashboard";
 import Income from "./Pages/Host/Income";
 import Reviews from "./Pages/Host/Reviews";
