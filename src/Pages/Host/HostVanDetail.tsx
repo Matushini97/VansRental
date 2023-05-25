@@ -1,12 +1,12 @@
 import s from './HostVanDetail.module.css'
 import {Link, NavLink, Outlet, useOutletContext, useParams, useLoaderData} from "react-router-dom";
 import type {VansType} from "../../Types";
-import {getHostVans} from "../../api";
+import {getVan} from "../../api";
 import {requireAuth} from "../../../utils";
 
 export async function loader(obj: any) {
     await requireAuth(obj.request)
-    return getHostVans(obj.params.id)
+    return getVan(obj.params.id)
 }
 
 // https://reactrouter.com/en/main/hooks/use-outlet-context how to send context with TS from parent to child

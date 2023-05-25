@@ -1,10 +1,10 @@
 import {Link, useLocation, useLoaderData} from "react-router-dom";
 import s from './VanDetail.module.css'
 import {VansType} from "../../Types";
-import {getVans} from "../../api";
+import {getVan} from "../../api";
 
 export function loader({params}: any) {
-    return getVans(params.id)
+    return getVan(params.id)
 }
 
 const VanDetail = () => {
