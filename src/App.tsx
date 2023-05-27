@@ -21,8 +21,9 @@ import HostVanInfo from "./Pages/Host/HostVanInfo";
 import HostVanPhotos from "./Pages/Host/HostVanPhotos";
 import HostVanPricing from "./Pages/Host/HostVanPricing";
 import Error from './Pages/Error/Error'
-import Login, {loader as LoginLoader, action as loginAction} from "./Pages/Login/Login";
+import Login, {loader as LoginLoader, action as loginAction} from "./Pages/Auth/Login";
 import {requireAuth} from "../utils";
+import Signup, {loader as signupLoader, action as signupAction} from "./Pages/Auth/Signup";
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -30,7 +31,8 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path='*' element={<Error />}/>
         <Route index element={<Home/>}/>
         <Route path='about' element={<About/>}/>
-        <Route path='login' element={<Login/>} loader={LoginLoader} action={loginAction}/>
+        <Route path='login' element={<Login title={'Sign in to your account'} isLogin={true}/>} loader={LoginLoader} action={loginAction}/>
+        <Route path='signup' element={<Signup title={'Create your account'} isLogin={false}/>} loader={signupLoader} action={signupAction}/>
         <Route path='vans' element={<Vans/>} loader={vansLoader} errorElement={<Error/>}/>
         <Route path='vans/:id' element={<VanDetail/>} loader={vanDetailLoader} errorElement={<Error/>}/>
         <Route path='host' element={<HostLayout />}>

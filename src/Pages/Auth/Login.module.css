@@ -52,3 +52,12 @@
     font-family: "Inter", sans-serif;
     cursor: pointer;
 }
+
+.authLinksText {
+    font-family: Inter, sans-serif;
+}
+
+.authLinks {
+    text-decoration: underline;
+}
+

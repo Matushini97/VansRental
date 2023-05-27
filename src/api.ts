@@ -1,5 +1,8 @@
 import {initializeApp} from "firebase/app";
 import {collection, doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore/lite"
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {useAppDispatch} from "./Hooks/reduxHooks";
+import {setUser} from "./store/slices/userSlice";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_KEY,
@@ -43,25 +46,36 @@ export async function getHostVans() {
     }))
 }
 
-export type CredsType = {
-    email: string
-    password: string
+// export type CredsType = {
+//     email: string
+//     password: string
+// }
+
+export async function loginUser(email: string, pass: string) {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, pass)
+        .then(({user}) => {
+            return {
+                email: user.email,
+                id: user.uid,
+                token: user.refreshToken
+            }
+    })
+        .catch()
+
 }
 
-export async function loginUser(creds: CredsType) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
+export async function signinUser(email: string, pass: string) {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, pass)
+        .then(({user}) => {
+            return {
+                email: user.email,
+                id: user.uid,
+                token: user.refreshToken
+            }
+        })
+        .catch()
 
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
-    }
-
-    return data
 }
 
